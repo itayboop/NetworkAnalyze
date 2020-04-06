@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="NetworkAnalyzer:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/NetworkAnalyzer_jar</output-path>
+    <root id="archive" name="NetworkAnalyzer.jar">
+      <element id="module-output" name="NetworkAnalyzer" />
+    </root>
+  </artifact>
+</component>
