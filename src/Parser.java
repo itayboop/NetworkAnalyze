@@ -1,16 +1,30 @@
-import java.io.IOException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.Scanner;
 
 public class Parser {
-    private String command = "netstat -nb > c:\\Users\\Admin\\Desktop\\NetstatLog.txt";
+    Scanner s = new Scanner(new File("C:\\Users\\Admin\\Desktop\\NetstatLog.txt"));
+    ArrayList<String> FileInList = new ArrayList<>();
 
-    public void cmdPrint() {
-        try {
-            Process process = Runtime.getRuntime().exec(new String[] {"cmd.exe", "/c", command});
-            if(process != null) {
-                process.waitFor();
-            }
-        } catch (Exception e) {
-            System.out.println("something went wrong...");
-        }
+    public Parser() throws FileNotFoundException {
     }
-}
+
+
+    public void fileToList() {
+        while(s.hasNextLine()) {
+            FileInList.add(s.nextLine());
+        }
+
+        s.close();
+    }
+
+    public void removeDuplicate() {
+        LinkedHashSet<String> hashSet = new LinkedHashSet<>(FileInList);
+        ArrayList<String> listWithoutDuplicates = new ArrayList<>(hashSet);
+
+        System.out.println(listWithoutDuplicates);
+            }
+        }
+
