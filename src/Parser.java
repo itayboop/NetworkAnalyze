@@ -12,6 +12,9 @@ public class Parser {
     }
 
 
+    /**
+     * this function copies the file content to a list
+     */
     public void fileToList() {
         while(s.hasNextLine()) {
             FileInList.add(s.nextLine());
@@ -20,6 +23,10 @@ public class Parser {
         s.close();
     }
 
+
+    /**
+     * this function removes any duplicates from the list
+     */
     public void removeDuplicate() {
         LinkedHashSet<String> hashSet = new LinkedHashSet<>(FileInList);
         ArrayList<String> listWithoutDuplicates = new ArrayList<>(hashSet);
