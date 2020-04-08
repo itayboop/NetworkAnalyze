@@ -11,9 +11,10 @@ import java.io.IOException;
 public class Gianna {
     public static void main(String[] args) throws IOException {
         CreateFile createFile = new CreateFile();
-        Parser parser = new Parser();
-
+        createFile.fileCreation();
         createFile.getNetstat();
+
+        Parser parser = new Parser();
         parser.fileToList();
         parser.removeDuplicate();
     }
